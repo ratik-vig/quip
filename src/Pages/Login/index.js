@@ -3,6 +3,8 @@ import Button from '../../Components/Button/Button'
 
 import { useLogin } from './useLogin'
 
+import Strings from '../../Constants/Strings'
+
 import './login.css'
 
 const Login = () => {
@@ -18,21 +20,21 @@ const Login = () => {
         <div className='login-page'>
             <div className='form-container'>
                 <Input 
-                    placeholder="Enter your email"
-                    label = "Email address"
+                    placeholder={Strings.emailPlaceholder}
+                    label = {Strings.emailLabel}
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e)}
                 />
                 <Input 
-                    placeholder="Enter your password"
-                    label = "Password"
+                    placeholder={Strings.passwordPlaceholder}
+                    label = {Strings.passwordLabel}
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e)}
                 />
                 <Button 
-                    text={"Log in"}
+                    text={Strings.loginBtn}
                     fluid
                 />
             </div>
