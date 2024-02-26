@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Input from '../../Components/Input/Input'
 import Button from '../../Components/Button/Button'
 
@@ -13,9 +14,13 @@ const Login = () => {
         email, 
         setEmail, 
         password, 
-        setPassword
+        setPassword,
+        errors
     } = useLogin('', '')
 
+    useEffect(() => {
+        console.log(errors)
+    }, [])
     return (
         <div className='login-page'>
             <div className='form-container'>
@@ -25,6 +30,7 @@ const Login = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e)}
+                    errors={errors[0]}
                 />
                 <Input 
                     placeholder={Strings.passwordPlaceholder}
@@ -32,6 +38,7 @@ const Login = () => {
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e)}
+                    errors={errors[1]}
                 />
                 <Button 
                     text={Strings.loginBtn}

@@ -14,6 +14,7 @@
     width: 90%;
     border: 1px solid #c5c5c5;
     border-radius: 5px;
+    /* min-width: 250px; */
 }
 
 .input-primary:focus{
@@ -24,4 +25,9 @@
 .error-border{
     outline: none;
     border: 2px solid red;
+}
+
+.input-error-list{
+    background-color: red;
+    padding: 0;
 }

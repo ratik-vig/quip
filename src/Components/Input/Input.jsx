@@ -1,11 +1,11 @@
 import './input.css'
 
-const Input = ({ type, placeholder, label, value, onChange}) => {
+const Input = ({ type, placeholder, label, value, onChange, errors }) => {
 
     const onChangeHandler = (e) => {
         onChange(e.target.value)
     }       
-    
+
     return (
         <div className='input-wrapper'>
             {label && <div className='input-label'>{label}</div>}
@@ -16,6 +16,10 @@ const Input = ({ type, placeholder, label, value, onChange}) => {
                 value={value}
                 onChange={onChangeHandler}
             />
+            {
+                errors && 
+                <p>{errors.msg}</p>
+            }
         </div>
     )
 }

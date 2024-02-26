@@ -3,6 +3,7 @@ import { useState } from "react";
 export function useLogin(initialEmail, initalPassword) {
     const [email, setEmail] = useState(initialEmail)
     const [password, setPassword] = useState(initalPassword)
+    const [errors, setErrors] = useState([{msg: "Email is required"}])
 
     const handleEmailChange = (e) => {
         setEmail(e)
@@ -16,6 +17,7 @@ export function useLogin(initialEmail, initalPassword) {
         email,
         setEmail: handleEmailChange,
         password,
-        setPassword: handlePasswordChange
+        setPassword: handlePasswordChange,
+        errors
     }
 }
