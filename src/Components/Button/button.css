@@ -1,0 +1,17 @@
+.button-wrapper{
+    margin-top: 16px;
+}
+
+.button{
+    padding: 8px 16px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #3178ab;
+    background-color: #3178ab;
+    cursor: pointer;
+    color: #f3f3f3;
+}
+
+.fluid{
+    width: 100%;
+}
