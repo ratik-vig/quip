@@ -1,10 +1,6 @@
 import './input.css'
 
-const Input = ({ type, placeholder, label, value, onChange, errors }) => {
-
-    const onChangeHandler = (e) => {
-        onChange(e.target.value)
-    }       
+const Input = ({ type, placeholder, label, value, onChange, errors, setError }) => {
 
     return (
         <div className='input-wrapper'>
@@ -12,13 +8,13 @@ const Input = ({ type, placeholder, label, value, onChange, errors }) => {
             <input 
                 type={type}
                 placeholder={placeholder}
-                className='input-primary'
+                className={`input-primary ${errors && 'error-border'}`}
                 value={value}
-                onChange={onChangeHandler}
+                onChange={ (e) => onChange(e) }
             />
             {
                 errors && 
-                <p>{errors.msg}</p>
+                <p className='error-text'>{errors.msg}</p>
             }
         </div>
     )

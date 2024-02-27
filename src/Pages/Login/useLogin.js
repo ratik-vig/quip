@@ -1,23 +1,16 @@
-import { useState } from "react";
 
 export function useLogin(initialEmail, initalPassword) {
-    const [email, setEmail] = useState(initialEmail)
-    const [password, setPassword] = useState(initalPassword)
-    const [errors, setErrors] = useState([{msg: "Email is required"}])
 
-    const handleEmailChange = (e) => {
-        setEmail(e)
+    const handleLogin = (email, password, setEmailError, setPwdError) => {
+        if(!email || !password) {
+            if(!email) setEmailError({msg: 'Email is required'})
+            if(!password) setPwdError({msg: 'Password is required'})
+            return
+        }
+        console.log(email, password)
     }
 
-    const handlePasswordChange = (e) => {
-        setPassword(e)
-    }
-
-    return {
-        email,
-        setEmail: handleEmailChange,
-        password,
-        setPassword: handlePasswordChange,
-        errors
-    }
+    return [
+       handleLogin
+    ]
 }
