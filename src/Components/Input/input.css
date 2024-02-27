@@ -24,15 +24,15 @@
 
 .error-border{
     outline: none;
-    border: 2px solid red;
+    border: 2px solid #e74c3c;
 }
 
 .input-error-list{
-    background-color: red;
+    background-color: #e74c3c;
     padding: 0;
 }
 
 .error-text{
-    color: red;
+    color: #e74c3c;
     font-size: 0.8em;
 }
