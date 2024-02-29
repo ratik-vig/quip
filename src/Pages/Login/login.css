@@ -8,11 +8,22 @@
 
 .form-container{
     width: 25%;
-    padding: 16px 32px;
+    /* padding: 16px 32px; */
     min-width: 250px;
 }
 
 .logo {
     width: 150px;
     height: 150px;
+}
+
+.error-container{
+    margin: 16px 0;
+}
+
+.error-container p {
+    color: #e74c3c;
+    font-size: 0.8em;
+    line-height: 0.5em;
+    font-weight: 500;
 }

@@ -1,33 +1,35 @@
+import { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import Input from '../../Components/Input/Input'
 import Button from '../../Components/Button/Button'
 import Loader from '../../Components/Loader/Loader'
 
 import { useLogin } from './useLogin'
 import { useInput } from '../../hooks/useInput'
+import { UserContext } from '../../context/userProvider'
 
 import Strings from '../../Constants/Strings'
 import logo from '../../Assets/logo.png'
-
 import './login.css'
-import { useGet } from '../../hooks/useFetch'
-import { useEffect } from 'react'
+
 
 const Login = () => {
-
-    const [
-        handleLogin,
-     ] = useLogin('', '')
-
-    const [data, loading, error] = useGet('http://localhost:5001/api/v1/chats/getChatsByUser') 
+    const navigate = useNavigate()
+    const [data, loading, error, handleLogin] = useLogin()
+    const {user, setUser} = useContext(UserContext)
 
     const { text: email, setText: setEmail, error: emailError, setError: setEmailError } = useInput('')
     const { text: password, setText: setPassword, error: pwdError, setError: setPwdError } = useInput('')
 
-    useEffect(() => {
-        console.log(loading)
-        if(data)
-            console.log(data.map(item => console.log('chat id' , item.chat_id)))
-    }, [data, loading])
+    useEffect(() => {        
+        if(data){
+            console.log(data)
+            
+        }
+        if(error)
+            console.log(error)
+    }, [data, error, loading])
 
     return (
         <div className='login-page'>
@@ -58,6 +60,9 @@ const Login = () => {
                     fluid
                     onClick={ () => handleLogin(email, password, setEmailError, setPwdError) }
                 />
+                {error && <div className='error-container'>
+                    {error.errors.map(item => <p>{item.msg}</p>)}
+                </div>}
             </div>
         </div>
     )

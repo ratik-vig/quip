@@ -7,7 +7,7 @@ const useFetch = (
 ) => {
 
     const [data, setData] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
     const getRequestConfig = (body=undefined) => {
@@ -24,6 +24,7 @@ const useFetch = (
     }
 
     const handleRequest = (body = undefined) => {
+        setLoading(true)
         fetch(url, getRequestConfig(body))
         .then(res => res.json())
         .then(data => {

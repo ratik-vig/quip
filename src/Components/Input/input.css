@@ -9,8 +9,8 @@
 }
 
 .input-primary{
-    padding: 12px 16px;
-    width: 90%;
+    padding: 12px 8px;
+    width: calc(100% - 18px);
     border: 1px solid #c5c5c5;
     border-radius: 5px;
 }
