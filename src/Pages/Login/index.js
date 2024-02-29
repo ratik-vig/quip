@@ -1,5 +1,6 @@
 import Input from '../../Components/Input/Input'
 import Button from '../../Components/Button/Button'
+import Loader from '../../Components/Loader/Loader'
 
 import { useLogin } from './useLogin'
 import { useInput } from '../../hooks/useInput'
@@ -8,7 +9,8 @@ import Strings from '../../Constants/Strings'
 import logo from '../../Assets/logo.png'
 
 import './login.css'
-import Loader from '../../Components/Loader/Loader'
+import { useGet } from '../../hooks/useFetch'
+import { useEffect } from 'react'
 
 const Login = () => {
 
@@ -16,13 +18,21 @@ const Login = () => {
         handleLogin,
      ] = useLogin('', '')
 
+    const [data, loading, error] = useGet('http://localhost:5001/api/v1/chats/getChatsByUser') 
+
     const { text: email, setText: setEmail, error: emailError, setError: setEmailError } = useInput('')
     const { text: password, setText: setPassword, error: pwdError, setError: setPwdError } = useInput('')
+
+    useEffect(() => {
+        console.log(loading)
+        if(data)
+            console.log(data.map(item => console.log('chat id' , item.chat_id)))
+    }, [data, loading])
 
     return (
         <div className='login-page'>
             <img src = {logo} className='logo'/>
-
+            <Loader isLoading={loading} />
             <div className='form-container'>
 
                 <Input 
