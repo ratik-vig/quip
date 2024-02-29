@@ -5,6 +5,7 @@ import Button from '../../Components/Button/Button'
 import { useInput } from '../../hooks/useInput'
 
 import Strings from '../../Constants/Strings'
+import logo from '../../Assets/logo.png'
 
 import '../Login/login.css'
 
@@ -20,6 +21,8 @@ const Signup = () => {
 
     return (
         <div className='login-page'>
+            <img src = {logo} className='logo'/>
+
             <div className='form-container'>
                 <Input 
                     placeholder={Strings.emailPlaceholder}

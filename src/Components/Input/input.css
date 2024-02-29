@@ -9,12 +9,10 @@
 }
 
 .input-primary{
-    position: relative;
     padding: 12px 16px;
     width: 90%;
     border: 1px solid #c5c5c5;
     border-radius: 5px;
-    /* min-width: 250px; */
 }
 
 .input-primary:focus{

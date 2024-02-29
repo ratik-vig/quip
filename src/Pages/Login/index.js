@@ -5,8 +5,10 @@ import { useLogin } from './useLogin'
 import { useInput } from '../../hooks/useInput'
 
 import Strings from '../../Constants/Strings'
+import logo from '../../Assets/logo.png'
 
 import './login.css'
+import Loader from '../../Components/Loader/Loader'
 
 const Login = () => {
 
@@ -19,7 +21,10 @@ const Login = () => {
 
     return (
         <div className='login-page'>
+            <img src = {logo} className='logo'/>
+
             <div className='form-container'>
+
                 <Input 
                     placeholder={Strings.emailPlaceholder}
                     label = {Strings.emailLabel}

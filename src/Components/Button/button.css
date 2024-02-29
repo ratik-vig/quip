@@ -8,8 +8,9 @@
     outline: none;
     border: 1px solid #3178ab;
     background-color: #3178ab;
-    cursor: pointer;
     color: #f3f3f3;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .fluid{
