@@ -1,0 +1,19 @@
+/* .chat-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.chat-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.message-container{
+    flex: 7;
+    height: 100%;
+}
+

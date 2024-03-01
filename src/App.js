@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react'
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import Login from './Pages/Login'
 import Signup from './Pages/Signup';

@@ -8,7 +8,6 @@
 
 .form-container{
     width: 25%;
-    /* padding: 16px 32px; */
     min-width: 250px;
 }
 
@@ -19,6 +18,20 @@
 
 .error-container{
     margin: 16px 0;
+}
+
+.signup-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.signup-cta{
+    margin-left: 8px;
+    text-decoration: none;
+    color: #3178ab;
+    font-weight: 600;
 }
 
 .error-container p {

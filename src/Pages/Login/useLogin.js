@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom'
 
 import { usePost } from '../../hooks/useFetch'
 import { UserContext } from '../../context/userProvider'
+import Routes from '../../Constants/Routes'
 
 export function useLogin() {
-    const [data, loading, error, handleRequest] = usePost('http://localhost:5001/api/v1/auth/login')
-    const { user, setUser} = useContext(UserContext)
+    const [data, loading, error, handleRequest] = usePost(Routes.login)
+    const { setUser } = useContext(UserContext)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -29,10 +30,17 @@ export function useLogin() {
         handleRequest({ email, password })
     }
 
-    return [
+    const handleLogout = () => {
+        console.log('check')
+        setUser(null)
+        localStorage.removeItem("user")
+    }
+
+    return {
        data,
        loading,
        error, 
-       handleLogin
-    ]
+       handleLogin,
+       handleLogout
+    }
 }

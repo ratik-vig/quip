@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom"
 import { UserContext, UserProvider } from "../../context/userProvider"
 
 const ProtectedRoute = ({ children}) => {
-    const { user, setUser } = useContext(UserContext)
+    const { user } = useContext(UserContext)
 
     if(user){
         return children
