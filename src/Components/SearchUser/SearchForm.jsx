@@ -2,10 +2,9 @@ import { useChats } from "../../hooks/useChats"
 import { useInput } from "../../hooks/useInput"
 import Input from "../Input/Input"
 
-const SearchForm = () => {
-    const { text: searchTerm, setText: setSearchTerm} = useInput('')
-    const { data, loading, error, handleRequest } = useChats()
-    
+const SearchForm = ({ searchTerm, setSearchTerm }) => {
+
+
     return(
         <>
             <div style={{display: 'flex', alignItems: 'center', width: '100%' }}>

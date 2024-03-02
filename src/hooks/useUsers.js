@@ -1,15 +1,17 @@
-export function useUsers(email){
+import { useGet } from "./useFetch"
 
-    const [data, loading, error, handleRequest] = useGet(`http://localhost:5001/api/v1/users/getUsers?email=${email}`)
+export function useUsers(){
 
-    const fetchUsers = () => {
-        
+    const [data, loading, error, handleRequest] = useGet(`http://localhost:5001/api/v1/users/getUsers`)
+
+    const fetchUsers = (email) => {
+        handleRequest({email: email})
     }
 
-    return {
+    return [
         data,
         loading,
         error,
-        handleRequest
-    }
+        fetchUsers
+    ]
 }
