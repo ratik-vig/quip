@@ -29,18 +29,22 @@ const Login = () => {
                     label = {Strings.emailLabel}
                     type="email"
                     value={email}
+                    noFocus={false}
                     onChange={setEmail}
                     errors={emailError}
                     setError={setEmailError}
+                    searchInput={false}
                 />
                 <Input 
                     placeholder={Strings.passwordPlaceholder}
                     label = {Strings.passwordLabel}
                     type="password"
                     value={password}
+                    noFocus={false}
                     onChange={setPassword}
                     errors={pwdError}
                     setError={setPwdError}
+                    searchInput={false}
                 />
                 <Button 
                     text={Strings.loginBtn}

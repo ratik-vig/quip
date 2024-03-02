@@ -8,22 +8,42 @@ import Strings from '../../Constants/Strings'
 import logo from '../../Assets/logo.png'
 
 import '../Login/login.css'
+import { useSignup } from './useSignup'
+import Loader from '../../Components/Loader/Loader'
+import Modal from '../../Components/Modal'
 
 const Signup = () => {
 
-    // const [
-    //     handleLogin,
-    //  ] = useLogin('', '')
-
+    const { text: fname, setText: setFname, error: fnameError, setError: setFnameError } = useInput('')
+    const { text: lname, setText: setLname, error: lnameError, setError: setLnameError } = useInput('')
     const { text: email, setText: setEmail, error: emailError, setError: setEmailError } = useInput('')
     const { text: password, setText: setPassword, error: pwdError, setError: setPwdError } = useInput('')
     const { text: confirmPwd, setText: setConfirmPwd, error: confirmPwdError, setError: setConfirmPwdError } = useInput('')
+    const { data, loading, error, handleSignup } = useSignup()
 
     return (
         <div className='login-page'>
             <img src = {logo} className='logo'/>
-
+            <Loader isLoading={loading} />
             <div className='form-container'>
+                <Input 
+                    placeholder={Strings.fnamePlaceholder}
+                    label = {Strings.fnameLabel}
+                    type="email"
+                    value={fname}
+                    onChange={setFname}
+                    errors={fnameError}
+                    setError={setFnameError}
+                />
+                <Input 
+                    placeholder={Strings.lnamePlaceholder}
+                    label = {Strings.lnameLabel}
+                    type="email"
+                    value={lname}
+                    onChange={setLname}
+                    errors={lnameError}
+                    setError={setLnameError}
+                />
                 <Input 
                     placeholder={Strings.emailPlaceholder}
                     label = {Strings.emailLabel}
@@ -54,8 +74,11 @@ const Signup = () => {
                 <Button 
                     text={Strings.signupBtn}
                     fluid
-                    // onClick={ () => handleLogin(email, password, setEmailError, setPwdError) }
+                    onClick={ () => handleSignup(fname, lname, email, password, confirmPwd, setFnameError, setLnameError, setEmailError, setPwdError, setConfirmPwdError) }
                 />
+                {error && <div className='error-container'>
+                    {error.errors.map(item => <p>{item.msg}</p>)}
+                </div>}
             </div>
         </div>
     )

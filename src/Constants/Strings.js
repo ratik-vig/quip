@@ -1,4 +1,8 @@
 const Strings = {
+    fnameLabel:'First name',
+    fnamePlaceholder: "Enter your first name",
+    lnameLabel: 'Last name',
+    lnamePlaceholder: "Enter your last name",
     loginHeader: "Log in to continue",
     emailLabel: "Email address",
     passwordLabel: "Password",

@@ -22,7 +22,6 @@ const useFetch = (
             config["body"] = JSON.stringify(body)
         }
         config["method"] = method
-        console.log(config)
         return config
     }
 

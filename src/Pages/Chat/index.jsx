@@ -8,6 +8,7 @@ import { useChats } from "../../hooks/useChats"
 import { useModal } from "../../Components/Modal/useModal"
 import Modal from "../../Components/Modal"
 import Loader from "../../Components/Loader/Loader"
+import SearchUser from "../../Components/SearchUser"
 
 const Chat = () => {
 
@@ -35,7 +36,9 @@ const Chat = () => {
             <Modal 
                 visible={visible}
                 setVisible={setVisible}
-            />
+            >
+                <SearchUser />
+            </Modal>
             <ChatList 
                 chats={data}
                 setVisible={setVisible}

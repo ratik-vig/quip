@@ -1,5 +1,11 @@
 .input-wrapper{
-    /* margin-top: 16px; */
+    margin-top: 16px;
+    
+}
+
+.input-wrapper-search{
+    flex: 1;
+    border-bottom: 1px solid #c5c5c5;
 }
 
 .input-label{
@@ -15,9 +21,26 @@
     border-radius: 5px;
 }
 
-.input-primary:focus{
+.input-search{
+    /* padding: 12px 8px; */
+    outline: none;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    padding: 16px 0;
+}
+
+.input-search:focus{
+    outline: none;
+}
+
+.input-primary:focus {
     outline: none;
     border: 2px solid #3178ab;
+}
+
+.no-focus:focus {
+    border: 1px solid #c5c5c5;
 }
 
 .error-border{
